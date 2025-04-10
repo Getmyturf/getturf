@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Search, User, Menu } from 'lucide-react';
+import { Search, User, Menu, IndianRupee, UserPlus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   NavigationMenu,
@@ -38,19 +38,19 @@ const Navbar = () => {
                   <NavigationMenuTrigger>Browse</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid w-[400px] gap-3 p-4">
-                      <Link to="/" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground">
+                      <Link to="/location" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground">
                         <div className="text-sm font-medium leading-none">By Location</div>
                         <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                           Find turfs based on your location
                         </p>
                       </Link>
-                      <Link to="/" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground">
+                      <Link to="/sports" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground">
                         <div className="text-sm font-medium leading-none">By Sport</div>
                         <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                           Browse facilities for specific sports
                         </p>
                       </Link>
-                      <Link to="/" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground">
+                      <Link to="/featured" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground">
                         <div className="text-sm font-medium leading-none">Featured</div>
                         <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                           Explore our top-rated facilities
@@ -60,12 +60,12 @@ const Navbar = () => {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link to="/" className={navigationMenuTriggerStyle()}>
+                  <Link to="/how-it-works" className={navigationMenuTriggerStyle()}>
                     How It Works
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link to="/" className={navigationMenuTriggerStyle()}>
+                  <Link to="/contact" className={navigationMenuTriggerStyle()}>
                     Contact
                   </Link>
                 </NavigationMenuItem>
@@ -81,8 +81,14 @@ const Navbar = () => {
             <Button variant="ghost" size="icon" className="hidden md:flex">
               <User className="h-5 w-5" />
             </Button>
-            <Button variant="default" className="hidden md:flex">
-              Book Now
+            <Button variant="ghost" asChild className="hidden md:flex items-center gap-1 text-green-600 hover:text-green-700">
+              <Link to="/register-turf">
+                <UserPlus className="h-5 w-5 mr-1" />
+                Register Turf
+              </Link>
+            </Button>
+            <Button variant="default" asChild className="hidden md:flex">
+              <Link to="/book-now">Book Now</Link>
             </Button>
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="h-5 w-5" />

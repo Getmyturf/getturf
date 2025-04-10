@@ -16,40 +16,41 @@ import {
   CarouselNext,
   CarouselPrevious
 } from "@/components/ui/carousel";
-import { Search, MapPin, Star, Filter, ChevronRight } from 'lucide-react';
+import { Search, MapPin, Star, Filter, ChevronRight, IndianRupee } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
-  // Featured turfs data
+  // Featured turfs data (now empty to allow turf owners to add their own)
   const featuredTurfs = [
     {
       id: 1,
       name: "Green Valley Turf",
-      location: "Manhattan, NY",
-      price: "$120/hr",
+      location: "Delhi, India",
+      price: 1200,
       rating: 4.8,
       image: "https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 2,
       name: "Urban Soccer Field",
-      location: "Brooklyn, NY",
-      price: "$95/hr",
+      location: "Mumbai, India",
+      price: 950,
       rating: 4.5,
       image: "https://images.unsplash.com/photo-1542852869-c3bbbeb73b8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 3,
       name: "Central Park Field",
-      location: "Midtown, NY",
-      price: "$150/hr",
+      location: "Bangalore, India",
+      price: 1500,
       rating: 4.9,
       image: "https://images.unsplash.com/photo-1556056504-5c7696baaed5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 4,
       name: "Riverside Turf",
-      location: "Queens, NY",
-      price: "$80/hr",
+      location: "Chennai, India",
+      price: 800,
       rating: 4.3,
       image: "https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     }
@@ -57,11 +58,11 @@ const Index = () => {
 
   // Nearby locations
   const nearbyLocations = [
-    { id: 1, name: "Manhattan", count: 24 },
-    { id: 2, name: "Brooklyn", count: 18 },
-    { id: 3, name: "Queens", count: 12 },
-    { id: 4, name: "Bronx", count: 8 },
-    { id: 5, name: "Staten Island", count: 5 }
+    { id: 1, name: "Delhi", count: 24 },
+    { id: 2, name: "Mumbai", count: 18 },
+    { id: 3, name: "Bangalore", count: 12 },
+    { id: 4, name: "Chennai", count: 8 },
+    { id: 5, name: "Hyderabad", count: 5 }
   ];
 
   return (
@@ -93,6 +94,14 @@ const Index = () => {
                 <span>Search</span>
               </button>
             </div>
+
+            {/* Turf Owner CTA */}
+            <div className="mt-8">
+              <Link to="/register-turf" className="inline-flex items-center text-blue-100 hover:text-white">
+                <UserPlus className="h-5 w-5 mr-2" />
+                <span>Are you a turf owner? Register your facility here</span>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -101,10 +110,10 @@ const Index = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-3xl font-bold text-gray-800">Featured Turfs</h2>
-          <a href="#" className="text-blue-600 hover:text-blue-800 flex items-center font-medium">
+          <Link to="/featured" className="text-blue-600 hover:text-blue-800 flex items-center font-medium">
             <span>View all</span>
             <ChevronRight className="h-5 w-5 ml-1" />
-          </a>
+          </Link>
         </div>
         
         <Carousel className="w-full">
@@ -133,10 +142,15 @@ const Index = () => {
                   </CardHeader>
                   
                   <CardFooter className="p-4 pt-0 flex justify-between items-center">
-                    <span className="font-bold text-blue-600">{turf.price}</span>
-                    <button className="bg-blue-600 text-white text-sm px-3 py-1 rounded hover:bg-blue-700 transition-colors">
-                      Book Now
-                    </button>
+                    <span className="font-bold text-blue-600 flex items-center">
+                      <IndianRupee className="h-4 w-4 mr-1" />
+                      {turf.price}/hr
+                    </span>
+                    <Link to="/book-now">
+                      <button className="bg-blue-600 text-white text-sm px-3 py-1 rounded hover:bg-blue-700 transition-colors">
+                        Book Now
+                      </button>
+                    </Link>
                   </CardFooter>
                 </Card>
               </CarouselItem>
@@ -156,15 +170,17 @@ const Index = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {nearbyLocations.map(location => (
-              <Card key={location.id} className="hover:shadow-md transition-shadow hover:border-blue-200 cursor-pointer">
-                <CardContent className="p-6">
-                  <div className="flex flex-col items-center text-center">
-                    <MapPin className="h-8 w-8 text-blue-600 mb-3" />
-                    <h3 className="font-bold text-lg mb-1">{location.name}</h3>
-                    <p className="text-gray-500">{location.count} turfs</p>
-                  </div>
-                </CardContent>
-              </Card>
+              <Link key={location.id} to={`/location/${location.name.toLowerCase()}`}>
+                <Card className="hover:shadow-md transition-shadow hover:border-blue-200 cursor-pointer">
+                  <CardContent className="p-6">
+                    <div className="flex flex-col items-center text-center">
+                      <MapPin className="h-8 w-8 text-blue-600 mb-3" />
+                      <h3 className="font-bold text-lg mb-1">{location.name}</h3>
+                      <p className="text-gray-500">{location.count} turfs</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
@@ -206,9 +222,18 @@ const Index = () => {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Find Your Perfect Turf?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto text-blue-100">Join thousands of sports enthusiasts who find and book turfs through our platform every day.</p>
-          <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-colors">
-            Get Started Now
-          </button>
+          <div className="flex flex-col md:flex-row justify-center gap-4">
+            <Link to="/book-now">
+              <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-colors w-full md:w-auto">
+                Book a Turf
+              </button>
+            </Link>
+            <Link to="/register-turf">
+              <button className="bg-transparent text-white border border-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-colors w-full md:w-auto mt-4 md:mt-0">
+                Register Your Turf
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -224,20 +249,20 @@ const Index = () => {
             <div>
               <h4 className="font-bold mb-4">Quick Links</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Search Turfs</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">How It Works</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                <li><Link to="/" className="text-gray-400 hover:text-white transition-colors">Home</Link></li>
+                <li><Link to="/featured" className="text-gray-400 hover:text-white transition-colors">Search Turfs</Link></li>
+                <li><Link to="/how-it-works" className="text-gray-400 hover:text-white transition-colors">How It Works</Link></li>
+                <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
               </ul>
             </div>
             
             <div>
               <h4 className="font-bold mb-4">Support</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><Link to="/faq" className="text-gray-400 hover:text-white transition-colors">FAQ</Link></li>
+                <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact Us</Link></li>
+                <li><Link to="/terms" className="text-gray-400 hover:text-white transition-colors">Terms of Service</Link></li>
+                <li><Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link></li>
               </ul>
             </div>
             
