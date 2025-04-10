@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,22 +61,6 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				},
-				turf: {
-					50: '#f0f9f0',
-					100: '#dcf1dc',
-					200: '#bce3bc',
-					300: '#92d392',
-					400: '#60ba60',
-					500: '#4CAF50',
-					600: '#2E7D32',
-					700: '#1b5e20',
-					800: '#1b4d1b',
-					900: '#1a401a',
-				},
-				orange: {
-					500: '#FF9800',
-					600: '#FB8C00',
 				}
 			},
 			borderRadius: {
