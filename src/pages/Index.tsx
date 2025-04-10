@@ -16,7 +16,7 @@ import {
   CarouselNext,
   CarouselPrevious
 } from "@/components/ui/carousel";
-import { Search, MapPin, Star, Filter, ChevronRight, IndianRupee } from 'lucide-react';
+import { Search, MapPin, Star, Filter, ChevronRight, IndianRupee, UserPlus } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
