@@ -9,6 +9,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import RegisterTurf from "./pages/RegisterTurf";
 import BookNow from "./pages/BookNow";
+import Contact from "./pages/Contact";
+import HowItWorks from "./pages/HowItWorks";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -24,6 +26,8 @@ const App: React.FC = () => {
             <Route path="/" element={<Index />} />
             <Route path="/register-turf" element={<RegisterTurf />} />
             <Route path="/book-now" element={<BookNow />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/how-it-works" element={<HowItWorks />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
