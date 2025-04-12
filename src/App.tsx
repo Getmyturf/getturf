@@ -11,6 +11,7 @@ import RegisterTurf from "./pages/RegisterTurf";
 import BookNow from "./pages/BookNow";
 import Contact from "./pages/Contact";
 import HowItWorks from "./pages/HowItWorks";
+import Sports from "./pages/Sports";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App: React.FC = () => {
             <Route path="/book-now" element={<BookNow />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
+            <Route path="/sports" element={<Sports />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
