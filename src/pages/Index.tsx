@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import { 
@@ -24,35 +23,35 @@ const Index = () => {
   const featuredTurfs = [
     {
       id: 1,
-      name: "Green Valley Turf",
+      name: "Green Valley Cricket Ground",
       location: "Delhi, India",
       price: 1200,
       rating: 4.8,
-      image: "https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 2,
-      name: "Urban Soccer Field",
+      name: "Urban Cricket Field",
       location: "Mumbai, India",
       price: 950,
       rating: 4.5,
-      image: "https://images.unsplash.com/photo-1542852869-c3bbbeb73b8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 3,
-      name: "Central Park Field",
+      name: "Central Park Cricket Pitch",
       location: "Bangalore, India",
       price: 1500,
       rating: 4.9,
-      image: "https://images.unsplash.com/photo-1556056504-5c7696baaed5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1589801258579-18e091f4ca26?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 4,
-      name: "Riverside Turf",
+      name: "Riverside Cricket Turf",
       location: "Chennai, India",
       price: 800,
       rating: 4.3,
-      image: "https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1562077772-3bd90403f7f0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -70,11 +69,11 @@ const Index = () => {
       <Navbar />
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')] bg-cover bg-center opacity-20"></div>
         <div className="container mx-auto px-4 py-24 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">Find Your Perfect Turf</h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100">Discover and book the best sports facilities near you</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">Find Your Perfect Cricket Turf</h1>
+            <p className="text-xl md:text-2xl mb-8 text-blue-100">Discover and book the best cricket facilities near you</p>
             
             {/* Search Bar */}
             <div className="bg-white rounded-lg p-2 flex items-center shadow-lg max-w-2xl mx-auto">
@@ -99,7 +98,7 @@ const Index = () => {
             <div className="mt-8">
               <Link to="/register-turf" className="inline-flex items-center text-blue-100 hover:text-white">
                 <UserPlus className="h-5 w-5 mr-2" />
-                <span>Are you a turf owner? Register your facility here</span>
+                <span>Are you a cricket ground owner? Register your facility here</span>
               </Link>
             </div>
           </div>
@@ -109,7 +108,7 @@ const Index = () => {
       {/* Featured Turfs Carousel */}
       <div className="container mx-auto px-4 py-16">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-800">Featured Turfs</h2>
+          <h2 className="text-3xl font-bold text-gray-800">Featured Cricket Grounds</h2>
           <Link to="/featured" className="text-blue-600 hover:text-blue-800 flex items-center font-medium">
             <span>View all</span>
             <ChevronRight className="h-5 w-5 ml-1" />
@@ -195,8 +194,8 @@ const Index = () => {
             <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <Search className="h-8 w-8 text-blue-600" />
             </div>
-            <h3 className="text-xl font-bold mb-3">Find a Turf</h3>
-            <p className="text-gray-600">Search for turfs based on your location, availability, and preferences.</p>
+            <h3 className="text-xl font-bold mb-3">Find a Cricket Ground</h3>
+            <p className="text-gray-600">Search for cricket grounds based on your location, availability, and preferences.</p>
           </div>
           
           <div className="text-center">
@@ -209,10 +208,10 @@ const Index = () => {
           
           <div className="text-center">
             <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <FootballIcon className="h-8 w-8 text-blue-600" />
+              <CricketIcon className="h-8 w-8 text-blue-600" />
             </div>
             <h3 className="text-xl font-bold mb-3">Play & Enjoy</h3>
-            <p className="text-gray-600">Arrive at the venue, show your booking confirmation, and start playing!</p>
+            <p className="text-gray-600">Arrive at the ground, show your booking confirmation, and start playing!</p>
           </div>
         </div>
       </div>
@@ -220,17 +219,17 @@ const Index = () => {
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Find Your Perfect Turf?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto text-blue-100">Join thousands of sports enthusiasts who find and book turfs through our platform every day.</p>
+          <h2 className="text-3xl font-bold mb-6">Ready to Find Your Perfect Cricket Ground?</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-blue-100">Join thousands of cricket enthusiasts who find and book grounds through our platform every day.</p>
           <div className="flex flex-col md:flex-row justify-center gap-4">
             <Link to="/book-now">
               <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-colors w-full md:w-auto">
-                Book a Turf
+                Book a Ground
               </button>
             </Link>
             <Link to="/register-turf">
               <button className="bg-transparent text-white border border-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-colors w-full md:w-auto mt-4 md:mt-0">
-                Register Your Turf
+                Register Your Ground
               </button>
             </Link>
           </div>
@@ -314,7 +313,7 @@ const CalendarIcon = (props) => {
   );
 };
 
-const FootballIcon = (props) => {
+const CricketIcon = (props) => {
   return (
     <svg 
       xmlns="http://www.w3.org/2000/svg" 
@@ -328,9 +327,10 @@ const FootballIcon = (props) => {
       strokeLinejoin="round" 
       {...props}
     >
-      <circle cx="12" cy="12" r="10"></circle>
-      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-      <path d="M2 12h20"></path>
+      <path d="M12 3v18"></path>
+      <path d="M5 13h14"></path>
+      <path d="m5 5 14 14"></path>
+      <path d="M5 19 19 5"></path>
     </svg>
   );
 };
