@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -51,7 +50,6 @@ const RegisterTurf = () => {
   });
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    // In a real app, this would send the data to the backend
     console.log(values);
     
     toast({
@@ -59,7 +57,6 @@ const RegisterTurf = () => {
       description: "Your turf has been registered successfully. We'll review and get back to you soon.",
     });
 
-    // Reset the form
     form.reset();
   };
 
@@ -121,12 +118,8 @@ const RegisterTurf = () => {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="football">Football</SelectItem>
                             <SelectItem value="cricket">Cricket</SelectItem>
-                            <SelectItem value="tennis">Tennis</SelectItem>
-                            <SelectItem value="basketball">Basketball</SelectItem>
-                            <SelectItem value="badminton">Badminton</SelectItem>
-                            <SelectItem value="multi">Multi-sport</SelectItem>
+                            <SelectItem value="volleyball">Volleyball</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
