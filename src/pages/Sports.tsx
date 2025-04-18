@@ -1,24 +1,21 @@
 
 import React from 'react';
 import Navbar from '@/components/Navbar';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { MapPin, Star, IndianRupee } from 'lucide-react';
+import { Card } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 
 const Sports = () => {
-  // Updated sports categories - only Cricket and Volleyball
+  // Updated sports categories without hardcoded turf counts
   const sportsCategories = [
     {
       id: 1,
       name: "Cricket",
       image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      turfsCount: 18
     },
     {
       id: 2,
       name: "Volleyball",
       image: "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      turfsCount: 12
     }
   ];
 
@@ -47,7 +44,6 @@ const Sports = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                     <div className="p-6 text-white w-full">
                       <h3 className="text-2xl font-bold mb-1">{sport.name}</h3>
-                      <p className="text-white/80">{sport.turfsCount} turfs available</p>
                     </div>
                   </div>
                 </div>
@@ -58,13 +54,13 @@ const Sports = () => {
 
         {/* Call to Action */}
         <div className="mt-16 bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-8 rounded-lg text-center">
-          <h2 className="text-3xl font-bold mb-4">Interested in our sports facilities?</h2>
+          <h2 className="text-3xl font-bold mb-4">Own a Sports Facility?</h2>
           <p className="text-xl mb-6 max-w-2xl mx-auto">
-            We offer premium cricket and volleyball facilities. Contact us to learn more!
+            Join our platform and list your cricket or volleyball facility today!
           </p>
-          <Link to="/contact">
+          <Link to="/register-turf">
             <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-colors">
-              Contact Us
+              Register Your Turf
             </button>
           </Link>
         </div>
